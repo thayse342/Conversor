@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulário</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section>
+            <form class="principal" action="">
+                <label for="categoriasMedidas">Categorias Medidas</label>
+                <select class="categoriaMedidas" name="categoriasMedidas" id="categoriasMedidas">
+                    <option value="">selecione Medida</option>
+                    <option value="temperatura">Temperatura</option>
+                    <option value="peso">Peso</option>
+                    <option value="comprimento">Comprimento</option>
+                </select>
+                <label for="unidadesDeEntrada">Unidades de Entrada</label>
+                <select name="unidadesDeEntrada" id="unidadesDeEntrada"></select>
+                <label for="unidadeDeSaida">Unidades de Saida</label>
+                <select name="unidadesDeSaida" id="unidadesDeSaida"></select>
+                <label for="valor">Valor</label>
+                <input id="valor" type="number">
+                <button id="conversao">Conversão</button>
+                <label for="resultadoConversao">Resultado Conversão</label>
+                <span id="resultadoConversao"></span>
+            </form>
+
+        </section>
+    </main>
+</body>
+
+</html>
