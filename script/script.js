@@ -11,25 +11,24 @@ categoriaMedidas.addEventListener('change', function () {
     if (categoriaMedidas.value == 'temperatura') {
         // escolherUnidades('celsius','fr','kelvin')
         unidadesDeEntrada.innerHTML = ""
-        unidadesDeEntrada.innerHTML = `<option value="">Escolha uma opção</option>
-                <option value="Celsius">celsius</option>
-                    <option value="Fr">fr</option>
-                    <option value="Kelvin">kelvin</option> ` 
+        unidadesDeEntrada.innerHTML = `
+        <option value="">Escolha uma opção</option>
+        <option value="celsius">celsius</option>
+        <option value="Fr">fr</option>
+        <option value="Kelvin">kelvin</option> ` 
     }
 })
 
 // Unidade de saida temperatura
 new Option("optionText", "optionValue")
-categoriaMedidas.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'temperatura')
+unidadesDeEntrada.addEventListener('change', function () {
         if (unidadesDeEntrada.value == 'celsius') {
             //  escolherUnidades('fr','kelvin')
             unidadesDeSaida.appendChild(new Option("Fr", "fr"));
             unidadesDeSaida.appendChild(new Option("Kelvin", "kelvin"));
-
         }
-}
-)
+})
+
 // Unidade de saida temperatura
 new Option("optionText", "optionValue")
 unidadesDeEntrada.addEventListener('change', function () {
@@ -37,9 +36,12 @@ unidadesDeEntrada.addEventListener('change', function () {
         if (unidadesDeEntrada.value == 'fr') {
             //  escolherUnidades('celsius','kelvin')
             unidadesDeSaida.innerHTML = ""
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-            <option value="celsius">celsius</option>
-                <option value="kelvin">kelvin</option>`
+            unidadesDeSaida.innerHTML = `
+                <option value="">Escolha uma opção</option>
+                <option value="celsius">celsius</option>
+                <option value="kelvin">kelvin</option>
+                
+                `
         }
     }
 })
@@ -300,6 +302,3 @@ function polegadasCentimetros(polegadas) {
     const polegadasCentimetros = polegadas * 2.54
     return polegadasCentimetros
 }
-
-
-
