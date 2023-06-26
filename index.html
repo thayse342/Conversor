@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulário</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="script/script.js" defer></script>
+    <script src="./script/script.js" defer></script>
 </head>
 
 <body>
@@ -17,13 +17,16 @@
                 <label for="categoriasMedidas">Categorias Medidas</label>
                 <!-- select utilizado para mostrar a caixa de seleção de categoria -->
                 <select class="categoriaMedidas" name="categoriasMedidas" id="categoriasMedidas">
-                    <option value="">selecione Medida</option>
+                    <option value="" selected disabled>selecione Medida</option>
                     <option value="temperatura">Temperatura</option>
                     <option value="peso">Peso</option>
                     <option value="comprimento">Comprimento</option>
                 </select>
                 <label for="unidadesDeEntrada">Unidades de Entrada</label>
-                <select name="unidadesDeEntrada" id="unidadesDeEntrada"></select>
+                <select name="unidadesDeEntrada" id="unidadesDeEntrada">
+                    <!-- Select vazio desabilitado assim já deixa como padrão um select desabilitado -->
+                    <option value="" selected disabled>selecione uma unidade</option>
+                </select>
                 <label for="unidadeDeSaida">Unidades de Saida</label>
                 <select name="unidadesDeSaida" id="unidadesDeSaida"></select>
                 <label for="valor">Valor</label>

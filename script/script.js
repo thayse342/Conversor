@@ -1,163 +1,93 @@
-var categoriaMedidas = document.getElementById('categoriasMedidas');
+var categoriaMedidas = document.getElementById("categoriasMedidas");
 var unidadesDeEntrada = document.getElementById('unidadesDeEntrada');
 var unidadesDeSaida = document.getElementById('unidadesDeSaida');
 var valor = document.getElementById('valor');
 var conversao = document.getElementById('conversao');
 var resultadoConversao = document.getElementById('resultadoConversao');
 
-// Categorias (temperatura,peso,comprimento)
-categoriaMedidas.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'temperatura') {
-// Opções (celsius,fr,kelvin)
-        unidadesDeEntrada.innerHTML = ""
+categoriaMedidas.addEventListener("change", mudarCategorias)
+function mudarCategorias(){
+    if(categoriaMedidas.value === "temperatura") {
+    unidadesDeEntrada.innerHTML = `
+    <option value="" selected disabled>selecione uma unidade</option>
+    <option value="celsius">Celsius</option>
+    <option value="fr">fr</option>
+    <option value="kelvin">kelvin</option>
+    `
+    }if(categoriaMedidas.value === "peso") {
         unidadesDeEntrada.innerHTML = `
-        <option value="">Escolha uma opção</option>
-        <option value="celsius">celsius</option>
-        <option value="fr">fr</option>
-        <option value="kelvin">kelvin</option> `
-        // Opções (quilogramas,gramas,libras)
-    } if (categoriaMedidas.value == 'peso') {
-        unidadesDeEntrada.innerHTML = ""
-        unidadesDeEntrada.innerHTML = `<option value="">Escolha uma opção</option>
+        <option value="" selected disabled>selecione uma unidade</option>
         <option value="quilogramas">quilogramas</option>
         <option value="gramas">gramas</option>
-        <option value="libras">libras</option> `
-        // Opções (quilogramas,gramas,libras)
-    }if (categoriaMedidas.value == 'comprimento') {
-        // escolherUnidades('metros','centimetros','polegadas')
-        unidadesDeEntrada.innerHTML = ""
-        unidadesDeEntrada.innerHTML = `<option value="">Escolha uma opção</option>
-        <option value="metros">metros</option>
-        <option value="centimetros">centimetros</option>
-        <option value="polegadas">polegadas</option> `
-    }
-
-})
-
-// Unidade de saida temperatura
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (unidadesDeEntrada.value == 'celsius') {
-        //  escolherUnidades('fr','kelvin')
-        unidadesDeSaida.appendChild(new Option("Fr", "fr"));
-        unidadesDeSaida.appendChild(new Option("Kelvin", "kelvin"));
-    }
-})
-
-// Unidade de saida temperatura
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'temperatura') {
-        if (unidadesDeEntrada.value == 'fr') {
-            //  escolherUnidades('celsius','kelvin')
-            unidadesDeSaida.innerHTML = ""
-            unidadesDeSaida.innerHTML = `
-                <option value="">Escolha uma opção</option>
-                <option value="celsius">celsius</option>
-                <option value="kelvin">kelvin</option>
-                
-                `
-        }
-    }
-})
-//Unidade de saida temperatura
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'temperatura') {
-        if (unidadesDeEntrada.value == 'kelvin') {
-            //  escolherUnidades('celsius','fr')
-            unidadesDeSaida.innerHTML = ""
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-                    <option value="Celsius">celsius</option>
-                        <option value="Fr">fr</option>`
-
-        }
-
-        if (unidadesDeEntrada.value == 'celsius') {
-            //  escolherUnidades('celsius','fr')
-            unidadesDeSaida.innerHTML = ""
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-                    <option value="Kelvin">kelvin</option>
-                        <option value="Fr">fr</option>`
-
-        }
-    }
-})
-
-// Unidade de saida peso
-new Option("optionText", "optionValue")
-categoriaMedidas.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'peso')
-        if (unidadesDeEntrada.value == 'quilogramas') {
-            //  escolherUnidades('fr','kelvin')
-            unidadesDeSaida.appendChild(new Option("gramas", "gramas"));
-            unidadesDeSaida.appendChild(new Option("libras", "libras"));
-
-        }
+        <option value="libras">libras</option>
+        `
+    }if(categoriaMedidas.value === "comprimento") {
+    unidadesDeEntrada.innerHTML = `
+    <option value="" selected disabled>selecione uma unidade</option>
+    <option value="metros">metros</option>
+    <option value="centimetros">centimetros</option>
+    <option value="polegadas">polegadas</option>
+    `
 }
-)
-//Unidade de saida peso
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'peso') {
-        if (unidadesDeEntrada.value == 'gramas') {
-            //  escolherUnidades('celsius','kelvin')
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-            <option value="quilogramas">quilogramas</option>
-                <option value="libras">libras</option>`
-        }
-    }
-})
-// Unidade de saida peso
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'peso') {
-        if (unidadesDeEntrada.value == 'libras') {
-            //  escolherUnidades('celsius','kelvin')
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-            <option value="quilogramas">quilogramas</option>
-                <option value="gramas">gramas</option>`
-        }
-    }
-})
-
-// Unidade de saida (centimetros,polegadas)
-new Option("optionText", "optionValue")
-categoriaMedidas.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'comprimento')
-        if (unidadesDeEntrada.value == 'metros') {
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-                    <option value="Centimetros">centimetros</option>
-                        <option value="Polegadas">polegadas</option>`
-
-        }
 }
-)
-// Unidade de saida (metros,polegadas)
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'comprimento') {
-        if (unidadesDeEntrada.value == 'centimetros') {
-            //  escolherUnidades('metros','polegadas')
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-            <option value="metros">metros</option>
-                <option value="polegadas">polegadas</option>`
-        }
-    }
-})
-// Unidades de saida (metros,centimetros)
-new Option("optionText", "optionValue")
-unidadesDeEntrada.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'comprimento') {
-        if (unidadesDeEntrada.value == 'polegadas') {
-            unidadesDeSaida.innerHTML = `<option value="">Escolha uma opção</option>
-            <option value="metros">metros</option>
-                <option value="centimetros">centimetros</option>`
-        }
-    }
-})
 
-conversao.addEventListener('click', (event) => event.preventDefault())
+unidadesDeEntrada.addEventListener ("change" ,mudarSaida)
+function mudarSaida (){
+    if(unidadesDeEntrada.value === "celsius") {
+        unidadesDeSaida.innerHTML = ""
+        unidadesDeSaida.innerHTML = `
+        <option value="fr">fr</option>
+        <option value="kelvin">kelvin</option>`
+    }if(unidadesDeEntrada.value === "fr") {
+        unidadesDeSaida.innerHTML = ""
+        unidadesDeSaida.innerHTML = `
+        <option value="celsius">celsius</option>
+        <option value="kelvin">kelvin</option>`
+}if(unidadesDeEntrada.value === "kelvin") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="celsius">celsius</option>
+    <option value="fr">fr</option>`
+}
+/* Bloco para unidades peso */
+if(unidadesDeEntrada.value === "quilogramas") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="gramas">gramas</option>
+    <option value="libras">libras</option>`
+}if(unidadesDeEntrada.value === "gramas") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="quilogramas">quilogramas</option>
+    <option value="libras">libras</option>`
+}if(unidadesDeEntrada.value === "libras") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="quilogramas">quilogramas</option>
+    <option value="gramas">gramas</option>`
+}
+/* Bloco Unidade de comprimento */
+if(unidadesDeEntrada.value === "metros") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="centimetros">centimetros</option>
+    <option value="polegadas">polegadas</option>`
+}if(unidadesDeEntrada.value === "centimetros") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="metros">metros</option>
+    <option value="polegadas">polegadas</option>`
+}if(unidadesDeEntrada.value === "polegadas") { 
+    unidadesDeSaida.innerHTML = ""
+    unidadesDeSaida.innerHTML = `
+    <option value="metros">metros</option>
+    <option value="centimetros">centimetros</option>`
+}
+
+
+}
+
+ conversao.addEventListener('click', (event) => event.preventDefault())
 
 conversao.addEventListener('click', function () {
 
@@ -294,4 +224,4 @@ function centimetrosPolegadas(centimetros) {
 function polegadasCentimetros(polegadas) {
     const polegadasCentimetros = polegadas * 2.54
     return polegadasCentimetros
-}
+} 
