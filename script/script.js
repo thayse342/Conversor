@@ -5,24 +5,24 @@ var valor = document.getElementById('valor');
 var conversao = document.getElementById('conversao');
 var resultadoConversao = document.getElementById('resultadoConversao');
 
-// Unidades de entrada temperatura
+// Categorias (temperatura,peso,comprimento)
 categoriaMedidas.addEventListener('change', function () {
     if (categoriaMedidas.value == 'temperatura') {
-
+// Opções (celsius,fr,kelvin)
         unidadesDeEntrada.innerHTML = ""
         unidadesDeEntrada.innerHTML = `
         <option value="">Escolha uma opção</option>
         <option value="celsius">celsius</option>
         <option value="fr">fr</option>
         <option value="kelvin">kelvin</option> `
-        //Unidades de entrada peso
+        // Opções (quilogramas,gramas,libras)
     } if (categoriaMedidas.value == 'peso') {
         unidadesDeEntrada.innerHTML = ""
         unidadesDeEntrada.innerHTML = `<option value="">Escolha uma opção</option>
-        <option value="gramas">gramas</option>
         <option value="quilogramas">quilogramas</option>
+        <option value="gramas">gramas</option>
         <option value="libras">libras</option> `
-
+        // Opções (quilogramas,gramas,libras)
     }if (categoriaMedidas.value == 'comprimento') {
         // escolherUnidades('metros','centimetros','polegadas')
         unidadesDeEntrada.innerHTML = ""
@@ -83,18 +83,7 @@ unidadesDeEntrada.addEventListener('change', function () {
         }
     }
 })
-// Unidade de entrada peso
 
-categoriaMedidas.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'peso') {
-        unidadesDeEntrada.innerHTML = ""
-        unidadesDeEntrada.innerHTML = `<option value="">Escolha uma opção</option>
-                    <option value="gramas">gramas</option>
-                        <option value="quilogramas">quilogramas</option>
-                        <option value="Libras">libras</option> `
-
-    }
-})
 // Unidade de saida peso
 new Option("optionText", "optionValue")
 categoriaMedidas.addEventListener('change', function () {
@@ -131,18 +120,7 @@ unidadesDeEntrada.addEventListener('change', function () {
         }
     }
 })
-// Unidades de entrada comprimento
 
-categoriaMedidas.addEventListener('change', function () {
-    if (categoriaMedidas.value == 'comprimento') {
-        // escolherUnidades('metros','centimetros','polegadas')
-        unidadesDeEntrada.innerHTML = ""
-        unidadesDeEntrada.innerHTML = `<option value="">Escolha uma opção</option>
-                <option value="metros">metros</option>
-                    <option value="centimetros">centimetros</option>
-                    <option value="polegadas">polegadas</option> `
-    }
-})
 // Unidade de saida (centimetros,polegadas)
 new Option("optionText", "optionValue")
 categoriaMedidas.addEventListener('change', function () {
